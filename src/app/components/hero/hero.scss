@@ -1,0 +1,15 @@
+.hero { background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%); border-radius: 16px; padding: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
+.hero-tag { color: #64748b; font-size: 13px; margin-bottom: 8px; }
+.hero-title { font-size: 42px; font-weight: 800; color: #0f172a; margin-bottom: 12px; }
+.hero-subtitle { font-size: 16px; font-weight: 600; color: #1e293b; line-height: 1.4; margin-bottom: 10px; }
+.hero-desc { font-size: 14px; color: #475569; line-height: 1.5; margin-bottom: 20px; }
+.hero-buttons { display: flex; gap: 12px; }
+.btn-primary { background: #2563eb; color: #ffffff; padding: 12px 24px; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; font-size: 14px; }
+.btn-primary:hover { background: #1d4ed8; }
+.btn-secondary { background: #ffffff; color: #1e293b; padding: 12px 24px; border: 1px solid #cbd5e1; border-radius: 10px; font-weight: 600; cursor: pointer; font-size: 14px; }
+.hero-illustration { position: relative; text-align: center; }
+.hero-illustration .laptop { font-size: 160px; }
+.floating-icon { position: absolute; background: #ffffff; padding: 8px 14px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); font-size: 13px; font-weight: 600; }
+.icon-gemini { top: 10%; right: 10%; }
+.icon-aider { top: 50%; right: 5%; }
+.icon-net { bottom: 15%; right: 30%; color: #6d28d9; }

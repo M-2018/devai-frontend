@@ -1,0 +1,12 @@
+<div class="panel">
+  <h3 class="panel-title">Tecnologías principales</h3>
+  <div class="tech-list">
+    <div class="tech-item" *ngFor="let tech of technologies">
+      <div class="tech-icon">{{ tech.icon }}</div>
+      <div>
+        <p class="tech-name">{{ tech.name }}</p>
+        <p class="tech-desc">{{ tech.desc }}</p>
+      </div>
+    </div>
+  </div>
+</div>

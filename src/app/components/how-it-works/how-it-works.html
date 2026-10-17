@@ -1,0 +1,16 @@
+<section class="how-it-works">
+  <div class="intro">
+    <h3>Cómo funciona</h3>
+    <p>Un flujo simple, poderoso y automatizado.</p>
+  </div>
+  <div class="steps">
+    <div class="step" *ngFor="let step of steps; let i = index">
+      <div class="step-number">{{ step.number }}</div>
+      <div class="step-content">
+        <p class="step-title">{{ step.title }}</p>
+        <p class="step-desc">{{ step.desc }}</p>
+      </div>
+      <span class="arrow" *ngIf="i < steps.length - 1">→</span>
+    </div>
+  </div>
+</section>

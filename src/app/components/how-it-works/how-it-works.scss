@@ -1,0 +1,9 @@
+.how-it-works { background: #0f172a; color: #ffffff; border-radius: 14px; padding: 24px; margin-top: 24px; display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: center; }
+.intro h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+.intro p { font-size: 12px; color: #94a3b8; }
+.steps { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.step { display: flex; align-items: center; gap: 10px; flex: 1; position: relative; }
+.step-number { width: 30px; height: 30px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+.step-title { font-size: 12px; font-weight: 600; }
+.step-desc { font-size: 10px; color: #94a3b8; }
+.arrow { color: #475569; font-size: 18px; margin-left: auto; }

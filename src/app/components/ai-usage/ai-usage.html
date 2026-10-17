@@ -1,0 +1,11 @@
+<div class="p-4 bg-gray-900 rounded-lg shadow-md text-white">
+  <h3 class="text-lg font-semibold mb-2">Modelos de IA Disponibles</h3>
+  <ul *ngIf="models && models.length > 0; else noModels">
+    <li *ngFor="let model of models" class="py-1 border-b border-gray-800">
+      {{ model.name || model }}
+    </li>
+  </ul>
+  <ng-template #noModels>
+    <p class="text-gray-400 text-sm">No hay modelos cargados actualmente.</p>
+  </ng-template>
+</div>

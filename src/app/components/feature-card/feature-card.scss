@@ -1,0 +1,9 @@
+.feature-card { background: #ffffff; border-radius: 14px; padding: 20px; border: 1px solid #f1f5f9; transition: box-shadow 0.2s; }
+.feature-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.card-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+.card-illustration { font-size: 40px; opacity: 0.7; }
+.card-title { font-size: 17px; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
+.card-desc { font-size: 13px; color: #64748b; line-height: 1.5; margin-bottom: 14px; }
+.card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 500; }

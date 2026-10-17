@@ -1,0 +1,14 @@
+.sidebar { background-color: #0f172a; color: #ffffff; padding: 24px 16px; display: flex; flex-direction: column; height: 100vh; }
+.logo-section { display: flex; gap: 12px; align-items: center; margin-bottom: 32px; padding: 0 8px; }
+.logo-icon { font-size: 32px; background: linear-gradient(135deg, #3b82f6, #8b5cf6); padding: 8px; border-radius: 12px; }
+.logo-title { font-size: 18px; font-weight: 700; }
+.logo-subtitle { font-size: 10px; color: #94a3b8; line-height: 1.2; margin-top: 2px; }
+.menu { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.menu-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 8px; color: #cbd5e1; cursor: pointer; font-size: 14px; transition: all 0.2s; }
+.menu-item:hover { background-color: #1e293b; color: #ffffff; }
+.menu-item.active { background-color: #2563eb; color: #ffffff; font-weight: 600; }
+.menu-item .icon { font-size: 18px; }
+.api-status { background-color: #1e293b; padding: 12px; border-radius: 10px; display: flex; align-items: center; gap: 10px; }
+.api-status .dot { width: 10px; height: 10px; background-color: #22c55e; border-radius: 50%; box-shadow: 0 0 8px #22c55e; }
+.status-title { font-size: 13px; font-weight: 600; }
+.status-url { font-size: 11px; color: #94a3b8; }

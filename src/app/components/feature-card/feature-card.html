@@ -1,0 +1,11 @@
+<div class="feature-card">
+  <div class="card-header">
+    <div class="card-icon" [ngClass]="data.iconBg">{{ data.icon }}</div>
+    <div class="card-illustration">📊</div>
+  </div>
+  <h3 class="card-title">{{ data.title }}</h3>
+  <p class="card-desc">{{ data.description }}</p>
+  <div class="card-tags">
+    <span class="tag" *ngFor="let tag of data.tags">{{ tag }}</span>
+  </div>
+</div>
