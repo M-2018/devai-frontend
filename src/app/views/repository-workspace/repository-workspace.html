@@ -1,79 +1,88 @@
 <div class="space-y-6">
-  <!-- Cabecera de la Vista -->
   <div>
     <h2 class="text-2xl font-bold text-white tracking-tight">Workspace de Repositorio</h2>
     <p class="text-sm text-slate-400 mt-1">Configura tu IA, clona el repositorio backend de .NET 10 y ejecuta auditorías o refactorizaciones.</p>
   </div>
 
-  <!-- Contenedor Principal en Grid -->
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-    
-    <!-- Columna Izquierda: Configuración y Git (1 columna) -->
+    <!-- Panel Izquierdo: Configuración y Herramientas -->
     <div class="space-y-6">
-      
       <!-- 1. Configuración de IA -->
-      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-indigo-400">1. Configuración de IA</h3>
+      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-5 shadow-xl space-y-3">
+        <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">1. Configuración de IA</h3>
         <div>
-          <label class="block text-xs font-medium text-slate-300 mb-1">Gemini API Key</label>
-          <input [(ngModel)]="apiKey" type="password" placeholder="AIzaSy..." class="w-full bg-[#0b0f19] border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500 transition">
+          <label class="block text-xs text-slate-400 mb-1">Gemini API Key</label>
+          <input [(ngModel)]="apiKey" type="password" placeholder="AIzaSy..." class="w-full bg-[#0b0f19] border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500 transition">
         </div>
       </div>
 
       <!-- 2. Repositorio Git -->
-      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-indigo-400">2. Repositorio Git</h3>
+      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-5 shadow-xl space-y-3">
+        <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">2. Repositorio Git</h3>
         <div>
-          <label class="block text-xs font-medium text-slate-300 mb-1">URL del Repositorio</label>
-          <input [(ngModel)]="repoUrl" type="text" placeholder="https://github.com/org/repo.git" class="w-full bg-[#0b0f19] border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500 transition">
+          <label class="block text-xs text-slate-400 mb-1">URL del Repositorio</label>
+          <input [(ngModel)]="repoUrl" type="text" placeholder="https://github.com/..." class="w-full bg-[#0b0f19] border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500 transition font-mono text-xs">
         </div>
-       <button 
-        type="button"
-        (click)="onCloneRepository()" 
-        [disabled]="isLoading" 
-        class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 rounded-xl text-sm transition shadow-lg shadow-indigo-600/30 disabled:opacity-50 cursor-pointer">
-        {{ isLoading ? 'Clonando...' : 'Clonar Repositorio' }}
-      </button>
+        <button 
+          type="button"
+          (click)="onCloneRepository()" 
+          [disabled]="isLoading" 
+          class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 rounded-xl text-sm transition shadow-lg shadow-indigo-600/30 disabled:opacity-50 cursor-pointer">
+          {{ isLoading ? 'Clonando...' : 'Clonar Repositorio' }}
+        </button>
       </div>
 
       <!-- 3. Herramientas Avanzadas -->
-      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-xl space-y-3">
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-indigo-400 mb-2">Herramientas Avanzadas</h3>
-        
-        <button (click)="runSecurityScan()" class="w-full text-left px-4 py-2.5 rounded-xl bg-slate-900/50 hover:bg-slate-800 text-sm text-slate-300 transition flex items-center space-x-3 border border-slate-800/80">
-          <span>🛡️</span><span>Escanear Seguridad</span>
-        </button>
-        <button (click)="runSyntaxCheck()" class="w-full text-left px-4 py-2.5 rounded-xl bg-slate-900/50 hover:bg-slate-800 text-sm text-slate-300 transition flex items-center space-x-3 border border-slate-800/80">
-          <span>⚡</span><span>Verificar Sintaxis (.NET 10)</span>
-        </button>
-        <button (click)="runCodeReview()" class="w-full text-left px-4 py-2.5 rounded-xl bg-slate-900/50 hover:bg-slate-800 text-sm text-slate-300 transition flex items-center space-x-3 border border-slate-800/80">
-          <span>🔍</span><span>Code Review con IA</span>
-        </button>
-        <button (click)="runGenerateDocs()" class="w-full text-left px-4 py-2.5 rounded-xl bg-slate-900/50 hover:bg-slate-800 text-sm text-slate-300 transition flex items-center space-x-3 border border-slate-800/80">
-          <span>📚</span><span>Generar Documentación</span>
-        </button>
-      </div>
-
-    </div>
-
-    <!-- Columna Derecha: Resultados y Consola del Backend (2 columnas) -->
-    <div class="lg:col-span-2 space-y-6">
-      
-      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col h-[600px]">
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-indigo-400 mb-4">Resultado del Análisis / Backend .NET 10</h3>
-        
-        <!-- Pantalla de consola / output -->
-        <div class="flex-1 bg-[#0b0f19] border border-slate-800 rounded-xl p-4 font-mono text-xs text-slate-300 overflow-y-auto space-y-2">
-          <div *ngFor="let log of logs" class="text-slate-300">{{ log }}</div>
+      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-5 shadow-xl space-y-3">
+        <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">3. Herramientas Avanzadas</h3>
+        <div class="grid grid-cols-2 gap-2">
+          <button (click)="runSecurityScan()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs py-2 px-3 rounded-xl transition border border-slate-700 text-left">
+            🛡️ Escanear Seguridad
+          </button>
+          <button (click)="runSyntaxCheck()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs py-2 px-3 rounded-xl transition border border-slate-700 text-left">
+            ⚡ Verificar Sintaxis
+          </button>
+          <button (click)="runCodeReview()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs py-2 px-3 rounded-xl transition border border-slate-700 text-left">
+            🤖 Code Review (IA)
+          </button>
+          <button (click)="runGenerateDocs()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs py-2 px-3 rounded-xl transition border border-slate-700 text-left">
+            📄 Generar Docs
+          </button>
         </div>
 
-        <div class="mt-4 pt-4 border-t border-slate-800 flex justify-between items-center text-xs text-slate-400">
-          <span>Estado: {{ isCloned ? 'Repositorio Clonado y Activo' : 'Repositorio no clonado' }}</span>
-          <span class="text-indigo-400 font-mono">Conectado a DevAI API (.NET 10)</span>
+        <!-- Botones de Acción para Documentación Generada -->
+        <div *ngIf="lastGeneratedHtml" class="mt-4 pt-3 border-t border-slate-800 space-y-2">
+          <p class="text-[11px] text-emerald-400 font-medium">✨ Documentación HTML lista:</p>
+          <div class="flex space-x-2">
+            <button (click)="openDocsInNewTab()" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white text-xs py-2 px-2 rounded-xl transition font-medium text-center">
+              👁️ Ver HTML
+            </button>
+            <button (click)="downloadDocsHtml()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs py-2 px-2 rounded-xl transition border border-slate-700 font-medium text-center">
+              💾 Descargar
+            </button>
+          </div>
         </div>
       </div>
-
     </div>
 
+    <!-- Panel Derecha: Consola de Resultados -->
+    <div class="lg:col-span-2 bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col h-[600px]">
+      <div class="flex justify-between items-center mb-4 pb-4 border-b border-slate-800">
+        <span class="text-xs font-mono text-indigo-400 uppercase tracking-wider">Consola de Salida / .NET 10</span>
+        <button (click)="logs = []" class="text-xs text-slate-500 hover:text-slate-300 transition">Limpiar</button>
+      </div>
+
+      <div class="flex-1 bg-[#0b0f19] border border-slate-800 rounded-xl p-4 font-mono text-xs text-slate-300 overflow-y-auto space-y-1.5 leading-relaxed">
+        <div *ngFor="let log of logs" 
+             [ngClass]="{
+               'text-emerald-400 font-semibold': log.includes('✅') || log.includes('[Éxito]'),
+               'text-red-400 font-semibold': log.includes('🚨') || log.includes('❌'),
+               'text-amber-400': log.includes('⚠️') || log.includes('---'),
+               'text-indigo-400': log.includes('📄') || log.includes('💡')
+             }">
+          {{ log }}
+        </div>
+      </div>
+    </div>
   </div>
 </div>
